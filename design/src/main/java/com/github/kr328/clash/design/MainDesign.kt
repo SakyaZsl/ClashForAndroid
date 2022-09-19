@@ -94,6 +94,20 @@ class MainDesign(context: Context) : Design<MainDesign.Request>(context) {
 
         binding.colorClashStarted = context.resolveThemedColor(R.attr.colorPrimary)
         binding.colorClashStopped = context.resolveThemedColor(R.attr.colorClashStopped)
+
+        binding.llConnect.setOnClickListener {
+            binding.svConnect.visibility =View.VISIBLE
+            binding.llProfilePage.visibility =View.GONE
+        }
+        binding.llProfile.setOnClickListener {
+            binding.svConnect.visibility =View.GONE
+            binding.llProfilePage.visibility =View.VISIBLE
+        }
+
+    }
+
+    fun initView(){
+
     }
 
     fun request(request: Request) {

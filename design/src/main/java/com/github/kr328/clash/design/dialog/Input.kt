@@ -1,6 +1,7 @@
 package com.github.kr328.clash.design.dialog
 
 import android.content.Context
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doOnTextChanged
 import com.github.kr328.clash.design.R
@@ -38,7 +39,7 @@ suspend fun Context.requestModelTextInput(
             .setCancelable(true)
             .setPositiveButton(R.string.ok) { _, _ ->
                 val text = binding.textField.text?.toString() ?: ""
-
+                Log.e("zzzz", "requestModelTextInput: $text")
                 if (validator(text))
                     it.resume(text)
                 else

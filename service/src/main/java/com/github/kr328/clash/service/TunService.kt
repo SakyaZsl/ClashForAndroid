@@ -133,6 +133,8 @@ class TunService : VpnService(), CoroutineScope by CoroutineScope(Dispatchers.De
             // Interface address
             addAddress(TUN_GATEWAY, TUN_SUBNET_PREFIX)
 
+            println("zzzz address:$TUN_GATEWAY")
+
             // Route
             if (store.bypassPrivateNetwork) {
                 resources.getStringArray(R.array.bypass_private_route).map(::parseCIDR).forEach {
@@ -141,8 +143,10 @@ class TunService : VpnService(), CoroutineScope by CoroutineScope(Dispatchers.De
 
                 // Route of virtual DNS
                 addRoute(TUN_DNS, 32)
+                println("zzzz addRoute:$TUN_DNS")
             } else {
                 addRoute(NET_ANY, 0)
+                println("zzzz addRoute:$NET_ANY")
             }
 
             // Access Control
@@ -171,6 +175,7 @@ class TunService : VpnService(), CoroutineScope by CoroutineScope(Dispatchers.De
 
             // Virtual Dns Server
             addDnsServer(TUN_DNS)
+            println("zzzz addDnsServer:$TUN_DNS")
 
             // Open MainActivity
             setConfigureIntent(

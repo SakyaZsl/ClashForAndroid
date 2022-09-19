@@ -115,6 +115,7 @@ class PropertiesDesign(context: Context) : Design<PropertiesDesign.Request>(cont
                 validator = ValidatorHttpUrl
             )
 
+
             if (url != profile.source) {
                 profile = profile.copy(source = url)
             }

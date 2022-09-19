@@ -8,4 +8,7 @@ dependencies {
 
     implementation(libs.kotlin.coroutine)
     implementation(libs.androidx.core)
+    implementation(libs.ok.http)
+    implementation(libs.gson)
+    implementation(libs.retrofit)
 }

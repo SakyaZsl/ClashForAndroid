@@ -81,4 +81,14 @@
     <!-- Logcat Design -->
     <dimen name="logcat_padding_vertical">12dp</dimen>
     <dimen name="logcat_padding_horizontal">12dp</dimen>
+    <dimen name="text_size_xs">8sp</dimen>
+    <dimen name="text_size_s">10sp</dimen>
+    <dimen name="text_size_m">12sp</dimen>
+    <dimen name="text_size_l">14sp</dimen>
+    <dimen name="text_size_xl">16sp</dimen>
+    <dimen name="text_size_xxl">18sp</dimen>
+    <dimen name="text_size_xxxl">20sp</dimen>
+    <dimen name="text_size_title">22sp</dimen>
+
+
 </resources>

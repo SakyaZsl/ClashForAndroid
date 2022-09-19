@@ -1,5 +1,6 @@
 package com.github.kr328.clash
 
+import android.util.Log
 import com.github.kr328.clash.common.util.intent
 import com.github.kr328.clash.common.util.setUUID
 import com.github.kr328.clash.common.util.uuid
@@ -20,6 +21,7 @@ class PropertiesActivity : BaseActivity<PropertiesDesign>() {
         setResult(RESULT_CANCELED)
 
         val uuid = intent.uuid ?: return finish()
+        Log.e("zzzz", "main uuid: $uuid" )
         val design = PropertiesDesign(this)
 
         val original = withProfile { queryByUUID(uuid) } ?: return finish()
@@ -90,6 +92,11 @@ class PropertiesActivity : BaseActivity<PropertiesDesign>() {
                 try {
                     withProcessing { updateStatus ->
                         withProfile {
+                            Log.e("zzzz", "verifyAndCommit: " +
+                                    "profile.uuid:${profile.uuid} "
+                                +"\nprofile.name:${profile.name}"+
+                                "\nprofile.interval:${profile.interval}"+
+                                "\nprofile.source:${profile.source}")
                             patch(profile.uuid, profile.name, profile.source, profile.interval)
 
                             coroutineScope {

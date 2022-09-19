@@ -35,6 +35,10 @@ dependencyResolutionManagement {
             val kaidl = "1.15"
             val room = "2.4.2"
             val multiprocess = "1.0.0"
+            val verify = "v1.1.1"
+            val okhttp = "3.14.9"
+            val retrofit = "2.9.0"
+            val gson = "2.8.5"
 
             library("build-android", "com.android.tools.build:gradle:$agp")
             library("build-kotlin-common", "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
@@ -57,6 +61,10 @@ dependencyResolutionManagement {
             library("kaidl-compiler", "com.github.kr328.kaidl:kaidl:$kaidl")
             library("kaidl-runtime", "com.github.kr328.kaidl:kaidl-runtime:$kaidl")
             library("rikkax-multiprocess", "dev.rikka.rikkax.preference:multiprocess:$multiprocess")
+            library("verify-code", "com.github.cjhandroid:AuthNumberView:$verify")
+            library("ok-http", "com.squareup.okhttp3:logging-interceptor:$okhttp")
+            library("retrofit", "com.squareup.retrofit2:retrofit:$retrofit")
+            library("gson", "com.google.code.gson:gson:$gson")
         }
     }
 }

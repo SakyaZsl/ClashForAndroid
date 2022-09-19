@@ -10,6 +10,7 @@ buildscript {
         mavenCentral()
         google()
         maven("https://maven.kr328.app/releases")
+        maven ("https://jitpack.io" )
     }
     dependencies {
         classpath(libs.build.android)
@@ -25,6 +26,7 @@ subprojects {
         mavenCentral()
         google()
         maven("https://maven.kr328.app/releases")
+        maven ("https://jitpack.io" )
     }
 
     val isApp = name == "app"
@@ -34,7 +36,7 @@ subprojects {
     extensions.configure<BaseExtension> {
         defaultConfig {
             if (isApp) {
-                applicationId = "com.github.kr328.clash"
+                applicationId = "com.h.rocket"
             }
 
             minSdk = 21

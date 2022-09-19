@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/application_name"
+                android:text="@string/app_name"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
             <TextView

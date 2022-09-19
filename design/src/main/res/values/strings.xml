@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PluralsCandidate">
-    <string name="launch_name">Clash</string>
-    <string name="application_name">Clash for Android</string>
+    <string name="launch_name">HRocket</string>
+    <string name="app_name">HRocket</string>
 
     <string name="stopped">Stopped</string>
     <string name="tap_to_start">Tap to start</string>
@@ -279,4 +279,44 @@
     <string name="version_updated_tips">The settings have been reseted and the old profiles needs to be saved again.</string>
 
     <string name="mode_switch_tips">Valid only for current session</string>
+    <string name="splash_content">让您的数字生活更精彩</string>
+    <string name="register_content">欢迎注册Hada Market</string>
+    <string name="register_phone">手机</string>
+    <string name="register_email">邮箱</string>
+    <string name="register_next">下一步</string>
+    <string name="register_code_tips">请输入验证码</string>
+    <string name="register_code_phone">验证码已发送至手机 +86 %s</string>
+    <string name="register_code_email">验证码已发送至邮箱 %s</string>
+    <string name="register_count_info">设置账号信息</string>
+    <string name="register_user_name">用户名</string>
+    <string name="register_user_name_hint">请输入用户名</string>
+    <string name="register_password">密码</string>
+    <string name="register_password_hint">请输入8-16位密码</string>
+    <string name="register_password_repeat">重复输入密码</string>
+    <string name="register_password_repeat_hint">请重复输入所设置密码</string>
+    <string name="login">登录</string>
+    <string name="sure">确认</string>
+    <string name="code_cn">+86</string>
+    <string name="email">Email</string>
+    <string name="email_hint">请输入邮箱</string>
+    <string name="code_hint">请输入验证码</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="phone_hint">输入手机号</string>
+    <string name="code_send">发送验证码</string>
+    <string name="login_by_phone">手机号登录</string>
+    <string name="login_by_email">邮箱登录</string>
+    <string name="login_to_register">暂无账号,立即注册</string>
+    <string name="login_by_other">其他登录方式</string>
+    <string name="login_by_password">密码登录</string>
+    <string name="login_by_code">验证码登录</string>
+    <string name="login_count_down">%d秒后重发</string>
+    <string name="tip_phone_empty">手机号不能为空</string>
+    <string name="tip_phone_error">手机号格式不对</string>
+    <string name="tip_email_empty">邮箱不能为空</string>
+    <string name="tip_email_error">邮箱号格式不对</string>
+    <string name="tip_code_error">验证码格式不对</string>
+    <string name="tip_nick_name_error">请输入用户名</string>
+    <string name="tip_password_less">请输入8到16位密码</string>
+    <string name="tip_password_same">两次密码请保持一致</string>
+
 </resources>
