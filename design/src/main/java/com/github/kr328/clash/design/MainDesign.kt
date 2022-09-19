@@ -106,9 +106,6 @@ class MainDesign(context: Context) : Design<MainDesign.Request>(context) {
 
     }
 
-    fun initView(){
-
-    }
 
     fun request(request: Request) {
         requests.trySend(request)

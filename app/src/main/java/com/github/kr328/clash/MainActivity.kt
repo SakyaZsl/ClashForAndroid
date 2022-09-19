@@ -27,7 +27,6 @@ class MainActivity : BaseActivity<MainDesign>() {
     override suspend fun main() {
         val design = MainDesign(this)
         setContentDesign(design)
-        design.initView()
 
         launch(Dispatchers.IO) {
             showUpdatedTips(design)
