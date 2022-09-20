@@ -8,6 +8,7 @@ import com.github.kr328.clash.common.util.ticker
 import com.github.kr328.clash.core.model.FetchStatus
 import com.github.kr328.clash.design.MainDesign
 import com.github.kr328.clash.design.ui.ToastDuration
+import com.github.kr328.clash.rocket.mine.UserInfoActivity
 import com.github.kr328.clash.service.model.Profile
 import com.github.kr328.clash.service.remote.IFetchObserver
 import com.github.kr328.clash.store.TipsStore
@@ -20,10 +21,13 @@ import kotlinx.coroutines.selects.select
 import java.util.concurrent.TimeUnit
 
 class MainActivity : BaseActivity<MainDesign>() {
-    companion object{
-        const val  Url ="https://service-bs768u4r-1313153981.sh.apigw.tencentcs.com/api/v1/client/subscribe?token=e8b52814b0a8696ee47d4eb4090d2eed"
-        const val  Url2 ="https://service-bs768u4r-1313153981.sh.apigw.tencentcs.com/api/v1/client/subscribe?token=e8b52814b0a8696ee47d4eb4090d2eed"
+    companion object {
+        const val Url =
+            "https://service-bs768u4r-1313153981.sh.apigw.tencentcs.com/api/v1/client/subscribe?token=e8b52814b0a8696ee47d4eb4090d2eed"
+        const val Url2 =
+            "https://service-bs768u4r-1313153981.sh.apigw.tencentcs.com/api/v1/client/subscribe?token=e8b52814b0a8696ee47d4eb4090d2eed"
     }
+
     override suspend fun main() {
         val design = MainDesign(this)
         setContentDesign(design)
@@ -70,6 +74,9 @@ class MainActivity : BaseActivity<MainDesign>() {
                             startActivity(HelpActivity::class.intent)
                         MainDesign.Request.OpenAbout ->
                             design.showAbout(queryAppVersionName())
+                        MainDesign.Request.OpenUserInfo ->
+                            UserInfoActivity.startAction(this@MainActivity)
+
                     }
                 }
                 if (clashRunning) {
@@ -81,11 +88,11 @@ class MainActivity : BaseActivity<MainDesign>() {
         }
     }
 
-    private suspend fun test(design:MainDesign){
+    private suspend fun test(design: MainDesign) {
         withProfile {
-           val uuid= create(Profile.Type.Url,"人工配置"+System.currentTimeMillis(),Url)
+            val uuid = create(Profile.Type.Url, "人工配置" + System.currentTimeMillis(), Url)
             queryByUUID(uuid)?.let {
-                Log.e("zzzz", "test:$uuid " )
+                Log.e("zzzz", "test:$uuid ")
                 commit(uuid) { status -> Log.e("zzzz", "updateStatus: $status") }
                 setActive(it)
                 design.startClash()

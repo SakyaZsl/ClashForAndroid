@@ -5,6 +5,8 @@ class Constants {
         const val BASE_URL = "http://118.195.131.240:10008/"
         const val MZSM_KEY = "MZSM_zh_HK"
         const val FWXY_KEY = "FWXY_zh_HK"
+        const val token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVVUlEIjoiOTliMzk4YTMtZjc4Ny00MDExLWJhZmQtNDViMTk5YTk4ZDhhIiwiVXNlcm5hbWUiOiIiLCJJRCI6MTk2LCJFbWFpbCI6ImFzZGRkQHFxLmNvbSIsIlRlbGVwaG9uZSI6IiIsIk5pY2tOYW1lIjoiaGhoaCIsIlN0YXR1cyI6MSwiQXV0aG9yaXR5SWQiOjAsIkJ1ZmZlclRpbWUiOjg2NDAwLCJleHAiOjE2NjQwOTU5NzEsImlzcyI6InFtUGx1cyIsIm5iZiI6MTY2MzQ5MDE3MX0.F4p6ju1W2KfUxq2HPaM_UOl4itGfNmU3MaoTibWjyAk"
+
     }
     object Email {
         //注册使用
