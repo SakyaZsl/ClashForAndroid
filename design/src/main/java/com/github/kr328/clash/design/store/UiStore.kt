@@ -62,6 +62,11 @@ class UiStore(context: Context) {
         defaultValue = false,
     )
 
+    var token: String by store.string(
+        key = "token",
+        defaultValue = ""
+    )
+
     companion object {
         private const val PREFERENCE_NAME = "ui"
     }

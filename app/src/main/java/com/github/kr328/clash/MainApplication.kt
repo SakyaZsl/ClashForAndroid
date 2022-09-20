@@ -7,15 +7,15 @@ import com.github.kr328.clash.common.compat.currentProcessName
 import com.github.kr328.clash.common.log.Log
 import com.github.kr328.clash.common.network.http.RetrofitHelper
 import com.github.kr328.clash.common.network.http.back.LogInterceptor
+import com.github.kr328.clash.common.network.http.back.TokenInterceptor
 import com.github.kr328.clash.common.network.http.call.CompletableCallAdapterFactory
 import com.github.kr328.clash.common.network.http.call.ReplaceUrlCallFactory
 import com.github.kr328.clash.common.network.http.converter.GsonConverterFactory
 import com.github.kr328.clash.common.util.Constants
+import com.github.kr328.clash.common.util.Constants.Urls.token
 import com.github.kr328.clash.remote.Remote
 import com.github.kr328.clash.service.util.sendServiceRecreated
-import okhttp3.HttpUrl
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
@@ -56,9 +56,11 @@ class MainApplication : Application() {
                 message
             )
         }
+        val tokenInterceptor = TokenInterceptor()
         logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder()
             .addNetworkInterceptor(logInterceptor)
+            .addInterceptor(tokenInterceptor)
             .connectTimeout(6L, TimeUnit.SECONDS)
             .readTimeout(6L, TimeUnit.SECONDS)
             .build()
@@ -66,6 +68,7 @@ class MainApplication : Application() {
             .baseUrl(Constants.Urls.BASE_URL)
             .callFactory(object : ReplaceUrlCallFactory(client) {
                 override fun getNewUrl(baseUrlName: String, request: Request): HttpUrl? {
+                    val build = request.newBuilder()
                     val oldUrl = request.url().toString()
                     if (baseUrlName == "city") {
                         val newUrl: String = oldUrl.replace(

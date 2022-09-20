@@ -24,6 +24,7 @@ class MainDesign(context: Context) : Design<MainDesign.Request>(context) {
         OpenSettings,
         OpenHelp,
         OpenAbout,
+        OpenUserInfo,
     }
 
     private val binding = DesignMainBinding
@@ -102,6 +103,9 @@ class MainDesign(context: Context) : Design<MainDesign.Request>(context) {
         binding.llProfile.setOnClickListener {
             binding.svConnect.visibility =View.GONE
             binding.llProfilePage.visibility =View.VISIBLE
+        }
+        binding.clUserInfo.setOnClickListener {
+
         }
 
     }
